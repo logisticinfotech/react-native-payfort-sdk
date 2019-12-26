@@ -102,8 +102,7 @@ Another example: If the amount value was 100 JOD; according to ISO code 3, you s
 |payment_option                   | Alpha            |❌          | Payment option.        | 10            |     |"MASTERCARD" or "VISA" or "AMEX" or "MADA (for Purchase operations and eci Ecommerce only)" or "MEEZA (for Purchase operations and ECOMMERCE eci only)"    |    |
 |eci                    | Alpha            |❌          | E-commerce indicator.        | 16            |      |ECOMMERCE   |      |
 |order_description                     | Alphanumeric            |❌          | A description of the order.        | 150            |#  '  /  . _  -  :  $  Space     |    |iPhone 6-S |
-|customer_ip                   | Alphanumeric            |❌          | It holds the customer's IP address. *It's Mandatory, if the fraud service is active.       | 45            |.    |     |192.178.
-1.10 |
+|customer_ip                   | Alphanumeric            |❌          | It holds the customer's IP address. *It's Mandatory, if the fraud service is active.       | 45            |.    |     |192.178.1.10 |
 |customer_name                  | Alpha            |❌          | The customer's name.        | 40            |_  \  /  -  .  ,     |     |John Smith |
 |phone_number                   | Alphanumeric            |❌          | The customer’s phone number.        | 19            |+  -  (  )  Space   |       |0096279 7219966 |
 |settlement_reference                  | Alphanumeric            |❌          | The Merchant submits this value to the FORT. The value is then passed to the Acquiring bank and displayed to the merchant in the Acquirer settlement file.        | 34            |.  -  _     |    |XYZ9239-yu898 |
