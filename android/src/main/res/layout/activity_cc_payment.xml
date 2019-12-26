@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fortSdkApp="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/pf_tittle_header_height"
+        android:background="@color/pf_gray">
+
+        <com.shamanland.fonticon.FontIconView
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/pf_border_space"
+            android:clickable="true"
+            android:onClick="onBackPressed"
+            android:text="@string/icon_left_circled"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/pf_back_icon_txt_size"
+            fortSdkApp:pressedGlowColor="@color/pf_green"
+            fortSdkApp:pressedGlowRadius="@dimen/pf_icon_glow_radius" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/pf_cc_title_hint"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/pf_15_txt_size" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/amountTV"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/pf_payment_type_header_height"
+        android:background="@color/pf_light_gray"
+        android:gravity="center_horizontal|center_vertical"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/pf_15_txt_size" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:scrollbars="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/cardNumberIL"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/pf_ET_height"
+                        android:layout_marginTop="@dimen/pf_border_space"
+                        android:paddingLeft="@dimen/pf_border_space"
+                        android:paddingRight="@dimen/pf_border_space"
+                        android:theme="@style/Fort.TextInputLayout.ET"
+                        fortSdkApp:errorEnabled="true"
+                        fortSdkApp:errorTextAppearance="@style/error_appearanceTL"
+                        fortSdkApp:hintTextAppearance="@style/Fort.TextInputLayout.TextAppearance">
+
+                        <EditText
+                            android:id="@+id/cardNumberET"
+                            style="@style/Fort.EditText.Style"
+                            android:textSize="@dimen/pf_13_txt_size"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/pf_card_number_hint"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:maxLength="16"
+                            android:maxLines="1"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.shamanland.fonticon.FontIconView
+                        android:id="@+id/cartTypeIV"
+                        android:layout_width="@dimen/pf_card_type_width"
+                        android:layout_height="@dimen/pf_card_type_height"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/pf_card_type_margin_to_align"
+                        android:layout_marginTop="@dimen/pf_elements_top_space"
+                        android:text="@string/icon_cc_visa"
+                        android:textColor="@color/pf_green"
+                        android:textSize="@dimen/pf_card_type_icon_txt_size"
+                        android:visibility="invisible" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/cardNumErrorTV"
+                    style="@style/error_appearance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/pf_ET_height"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/pf_border_space"
+                    android:paddingRight="@dimen/pf_border_space">
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/expiryDateIL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/pf_5dp_space"
+                        android:layout_weight="1"
+                        android:theme="@style/Fort.TextInputLayout.ET"
+                        fortSdkApp:errorEnabled="true"
+                        fortSdkApp:errorTextAppearance="@style/error_appearanceTL"
+                        fortSdkApp:hintTextAppearance="@style/Fort.TextInputLayout.TextAppearance">
+
+                        <EditText
+                            android:id="@+id/expiryDateET"
+                            style="@style/Fort.EditText.Style"
+                            android:textSize="@dimen/pf_13_txt_size"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/pf_expiry_date_hint"
+                            android:imeOptions="actionNext"
+                            android:inputType="date"
+                            android:maxLength="5"
+                            android:maxLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/cvvIL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/pf_5dp_space"
+                        android:layout_weight="1"
+                        android:theme="@style/Fort.TextInputLayout.ET"
+                        fortSdkApp:errorEnabled="true"
+                        fortSdkApp:errorTextAppearance="@style/error_appearanceTL"
+                        fortSdkApp:hintTextAppearance="@style/Fort.TextInputLayout.TextAppearance">
+
+                        <EditText
+                            android:id="@+id/cvvET"
+                            style="@style/Fort.EditText.Style"
+                            android:textSize="@dimen/pf_13_txt_size"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/pf_cvv_hint"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:maxLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/expiryDateErrorTV"
+                        style="@style/error_appearance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/cvvErrorTV"
+                        style="@style/error_appearance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/holderNameIL"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/pf_ET_height"
+                    android:paddingLeft="@dimen/pf_border_space"
+                    android:paddingRight="@dimen/pf_border_space"
+                    android:theme="@style/Fort.TextInputLayout.ET"
+                    fortSdkApp:errorEnabled="false"
+                    fortSdkApp:hintTextAppearance="@style/Fort.TextInputLayout.TextAppearance">
+
+                    <EditText
+                        android:id="@+id/holderNameET"
+                        style="@style/Fort.EditText.Style"
+                        android:textSize="@dimen/pf_13_txt_size"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/pf_cardholder_name_hint"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPersonName"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rememberMeRL"
+                    android:visibility="gone"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="@dimen/pf_10dp_space"
+                    android:layout_marginRight="@dimen/pf_10dp_space">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:textColor="@android:color/darker_gray"
+                        android:text="@string/pf_remember_me"/>
+
+                    <ToggleButton
+                        android:id="@+id/rememberMeTB"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="@dimen/pf_remember_me_tb_width"
+                        android:checked="true"
+                        android:layout_height="@dimen/pf_remember_me_tb_height"
+                        android:background="@drawable/remember_me_toggle"
+                        android:layout_marginTop="@dimen/pf_10dp_space"
+                        android:textOff=""
+                        android:textOn=""/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/pf_pay_btn_height"
+                    android:layout_marginLeft="@dimen/pf_10dp_space"
+                    android:layout_marginRight="@dimen/pf_10dp_space"
+                    android:layout_marginTop="@dimen/pf_elements_top_space"
+                    android:background="@drawable/pay_btn_bg">
+
+
+                    <Button
+                        android:id="@+id/payBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:onClick="onPayPressed"
+                        android:text="@string/pf_pay_btn_hint"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/pf_20_txt_size" />
+
+                    <ProgressBar
+                        android:id="@+id/payLoadingPB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@null"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <WebView
+                android:id="@+id/threeDsWV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
