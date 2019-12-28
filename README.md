@@ -1,19 +1,25 @@
-# react-native-payfort-sdk
+<p align="left">
+<a href="https://www.npmjs.com/package/@logisticinfotech/react-native-payfort-sdk"><img alt="npm version" src="https://img.shields.io/badge/npm-v1.0.2-green.svg"></a>
+<a href="https://www.npmjs.com/package/@logisticinfotech/react-native-payfort-sdk"><img src="https://img.shields.io/badge/downloads-%3E1K-yellow.svg"></a>
+<a href="https://www.npmjs.com/package/@logisticinfotech/react-native-payfort-sdk"<><img src="https://img.shields.io/badge/license-MIT-orange.svg"></a>
+</p>
+
+# @logisticinfotech/react-native-payfort-sdk
 
 ## Getting started
 
-`$ npm install react-native-payfort-sdk --save`
+`$ npm install @logisticinfotech/react-native-payfort-sdk --save`
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-payfort-sdk`
+`$ react-native link @logisticinfotech/react-native-payfort-sdk`
 
 ### Manual installation
 
 #### iOS
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-payfort-sdk` and add `RNPayfortSdk.xcodeproj`
+2. Go to `node_modules` ➜ `@logisticinfotech/react-native-payfort-sdk` and add `RNPayfortSdk.xcodeproj`
 3. In XCode, in the project navigator, select your project. Add `libRNPayfortSdk.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Run your project (`Cmd+R`)<
 
@@ -26,12 +32,12 @@
 
 2. Append the following lines to `android/settings.gradle`:
    ```
-   include ':react-native-payfort-sdk'
-   project(':react-native-payfort-sdk').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-payfort-sdk/android')
+   include ':@logisticinfotech/react-native-payfort-sdk'
+   project(':@logisticinfotech/react-native-payfort-sdk').projectDir = new File(rootProject.projectDir, 	'../node_modules/@logisticinfotech/react-native-payfort-sdk/android')
    ```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
    ```
-     compile project(':react-native-payfort-sdk')
+     compile project(':@logisticinfotech/react-native-payfort-sdk')
    ```
 
 ## Steps to follow before use
@@ -55,7 +61,7 @@
 ## Usage
 
 ```javascript
-import RNPayfortSdk from "react-native-payfort-sdk";
+import RNPayfortSdk from "@logisticinfotech/react-native-payfort-sdk";
 
 // TODO: What to do with the module?
 
