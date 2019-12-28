@@ -66,7 +66,7 @@ import RNPayfortSdk from "@logisticinfotech/react-native-payfort-sdk";
 // TODO: What to do with the module?
 
 onPressPay = () => {
-  RNPayFort({
+  RNPayfortSdk({
     command: "PURCHASE",
     access_code: "xxxxxxxxxxxxxxxxxx",
     merchant_identifier: "xxxxxxxxxx",

@@ -1,6 +1,6 @@
 {
   "name": "@logisticinfotech/react-native-payfort-sdk",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React Native PayFort SDK for payment.",
   "main": "index.js",
   "types": "index.d.ts",
