@@ -1,17 +1,36 @@
 {
   "name": "react-native-payfort-sdk",
   "version": "1.0.0",
-  "description": "",
+  "description": "React Native PayFort SDK for payment.",
   "main": "index.js",
+  "types": "index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "React",
+    "ReactNativePayFortSDK",
+    "RNPayFortSDK",
+    "PayFort SDK",
+    "PayFort",
+    "Pay"
   ],
-  "author": "",
-  "license": "",
+  "author": "Shubham Vala, Naishadh Sakariya, Bhavin Rajapara",
+  "license": "MIT",
   "peerDependencies": {
-    "react-native": "^0.41.2"
+    "react-native": "^0.62.5"
+  },
+  "bugs": {
+    "url": "https://github.com/logisticinfotech/react-native-payfort-sdk/issues"
+  },
+  "homepage": "https://github.com/logisticinfotech/react-native-payfort-sdk#readme",
+  "devDependencies": {
+    "@types/react": "^16.8.13",
+    "typescript": "^3.4.3"
   }
 }
