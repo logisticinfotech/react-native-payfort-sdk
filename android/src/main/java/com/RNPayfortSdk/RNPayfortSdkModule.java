@@ -63,7 +63,7 @@ public class RNPayfortSdkModule extends ReactContextBaseJavaModule implements Ac
               .setEmail(requestParameterBean.getEmail())
               .setLanguage(requestParameterBean.getLanguage())
               .setTokenName(requestParameterBean.getTokenName())
-              .setUniqueToken(random())
+              .setMerchentReference(requestParameterBean.getMerchentReference())
               .setPaymentOption(requestParameterBean.getPaymentOption())
               .setEci(requestParameterBean.getEci())
               .setOrderDescription(requestParameterBean.getOrderDescription())

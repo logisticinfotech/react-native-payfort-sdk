@@ -90,11 +90,11 @@ onPressPay = () => {
 
 ## Note
 
-Before sending the amount value of any transaction, you have to multiply the value with the currency decimal code according to ISO code 3.
+1. Before sending the amount value of any transaction, you have to multiply the value with the currency decimal code according to ISO code 3.
+    For example: If the amount value was 500 AED; according to ISO code 3, you should multiply the value with 100 (2 decimal points); so it will be sent in the request as 50000.
+    Another example: If the amount value was 100 JOD; according to ISO code 3, you should multiply the value with 1000 (3 decimal points); so it will be sent in the request as 100000.
 
-For example: If the amount value was 500 AED; according to ISO code 3, you should multiply the value with 100 (2 decimal points); so it will be sent in the request as 50000.
-
-Another example: If the amount value was 100 JOD; according to ISO code 3, you should multiply the value with 1000 (3 decimal points); so it will be sent in the request as 100000.
+2. If you have unique merchent_reference then you can add to parameter, else system will generate unique merchent_reference by its own.
 
 ## Basic properties
 
@@ -110,6 +110,7 @@ Another example: If the amount value was 100 JOD; according to ISO code 3, you s
 | customer_email       | Alphanumeric | ✅        | The customer's email.                                                                                                                                      | 254    | \_ - . @                |                                                                                                                                                         | customer@domain.com |
 | testing              | Boolean      | ✅        | Testing or Production                                                                                                                                      |        |                         | "true" or "false"                                                                                                                                       |                     |
 | sdk_token            | Alphanumeric | ✅        | An SDK token to enable using the FORT Mobile SDK.                                                                                                          | 100    |                         |                                                                                                                                                         | Dwp78q3             |
+| merchant_reference           | Alphanumeric | ❌        | The Merchant’s unique order number.                                                                                                        | 40    | _ - .                 |                                                                                                                                                         | XYZ9239-yu898              |
 | token_name           | Alphanumeric | ❌        | The Token received from the Tokenization process.                                                                                                          | 100    | \_ - . @                |                                                                                                                                                         | Op9Vmp              |
 | payment_option       | Alpha        | ❌        | Payment option.                                                                                                                                            | 10     |                         | "MASTERCARD" or "VISA" or "AMEX" or "MADA (for Purchase operations and eci Ecommerce only)" or "MEEZA (for Purchase operations and ECOMMERCE eci only)" |                     |
 | eci                  | Alpha        | ❌        | E-commerce indicator.                                                                                                                                      | 16     |                         | ECOMMERCE                                                                                                                                               |                     |

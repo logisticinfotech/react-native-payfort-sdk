@@ -55,9 +55,10 @@ public class LIFortPayment extends Activity  {
     private FortCallBackManager fortCallback;
     private FortInterfaces.OnTnxProcessed callback;
     private Activity context;
-    private String uniqueToken;
     static Disposable disposable;
     private ReactApplicationContext reactApplicationContext;
+    private String merchent_reference;
+
 
     public LIFortPayment(LiFortpaymentBuilder builder) {
         this.context = builder.context;
@@ -71,7 +72,6 @@ public class LIFortPayment extends Activity  {
         this.testing = builder.testing;
         this.fortCallback = builder.fortCallback;
         this.callback = builder.callback;
-        this.uniqueToken = builder.uniqueToken;
         this.paymentOption = builder.paymentOption;
         this.tokenName = builder.tokenName;
         this.eci=builder.eci;
@@ -86,6 +86,7 @@ public class LIFortPayment extends Activity  {
         this.merchantExtra3=builder.merchantExtra3;
         this.merchantExtra4=builder.merchantExtra4;
         this.command=builder.command;
+        this.merchent_reference=builder.merchent_reference;
         this.reactApplicationContext=builder.reactApplicationContext;
         deviceId = FortSdk.getDeviceId(context);
     }
@@ -138,10 +139,15 @@ public class LIFortPayment extends Activity  {
         requestMap.put("currency", currency_type);
         requestMap.put("amount", amount);
         requestMap.put("language", language);
-        requestMap.put("merchant_reference", uniqueToken);
         requestMap.put("sdk_token", sdkToken);
         if(tokenName!=null){
             requestMap.put("token_name", tokenName);
+        }
+        if(merchent_reference!=null){
+            requestMap.put("merchant_reference", merchent_reference);
+        }
+        else{
+            requestMap.put("merchant_reference", random());
         }
         if(paymentOption!=null){
             requestMap.put("payment_option", paymentOption);
@@ -259,6 +265,7 @@ public class LIFortPayment extends Activity  {
     public static class LiFortpaymentBuilder {
         private String tokenName;
         private String merchant_identifier;
+        private String merchent_reference;
         private String access_code;
         private String sha_Request_Phrase;
         private String email;
@@ -269,7 +276,6 @@ public class LIFortPayment extends Activity  {
         private FortCallBackManager fortCallback;
         private FortInterfaces.OnTnxProcessed callback;
         private Activity context;
-        private String uniqueToken;
         private String paymentOption;
         private String eci;
         private String orderDescription;
@@ -287,6 +293,11 @@ public class LIFortPayment extends Activity  {
 
         public LiFortpaymentBuilder setCommand(String command) {
             this.command = command;
+            return this;
+        }
+
+        public LiFortpaymentBuilder setMerchentReference(String merchent_reference) {
+            this.merchent_reference = merchent_reference;
             return this;
         }
 
@@ -351,11 +362,6 @@ public class LIFortPayment extends Activity  {
 
         public LiFortpaymentBuilder setReactContext(ReactApplicationContext reactApplicationContext){
             this.reactApplicationContext=reactApplicationContext;
-            return this;
-        }
-
-        public LiFortpaymentBuilder setUniqueToken(String uniqueToken) {
-            this.uniqueToken = uniqueToken;
             return this;
         }
 

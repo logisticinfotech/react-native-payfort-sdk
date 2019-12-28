@@ -7,6 +7,9 @@ public class RequestParameterBean {
     @SerializedName("command")
     @Expose
     private String command;
+    @SerializedName("merchant_reference")
+    @Expose
+    private String merchentReference;
     @SerializedName("payment_option")
     @Expose
     private String paymentOption;
@@ -77,6 +80,13 @@ public class RequestParameterBean {
 
     public void setCommand(String command) {
         this.command = command;
+    }
+    public String getMerchentReference() {
+        return merchentReference;
+    }
+
+    public void setMerchentReference(String merchentReference) {
+        this.merchentReference = merchentReference;
     }
 
     public String getPaymentOption() {
