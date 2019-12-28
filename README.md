@@ -47,6 +47,10 @@
 
 1. Download PayFort SDK Module file from [here](https://docs.payfort.com/docs/api/build/lib/PayFortSDK1.9.zip).
 2. Extract PayFortSDK1.9.zip.
+3. Drag the PayFortSDK.framework & PayFortSDK.bundle to Frameworks in Project Navigator.
+4. Create a new group Frameworks if it does not exist: * Choose Create groups for any added folders.* Make Sure to select Copy files if needed.
+5. Set -ObjC in the Other Linker Flags in the Target → Build Settings Tab.
+6. For Swift Projects Don’t forget to add the #import to the Bridging-Header.h
 
 
 ## Usage
