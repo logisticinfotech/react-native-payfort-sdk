@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="M1L-v1-Ywo" customClass="PayFortView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R6O-kl-D2L">
+                    <rect key="frame" x="0.0" y="61" width="320" height="55"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBw-I7-XDS">
+                            <rect key="frame" x="77.5" y="18" width="165" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="2WM-YJ-QMt"/>
+                                <constraint firstAttribute="width" constant="165" id="mA7-kb-ZvL"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.94901960780000005" green="0.95686274510000002" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="NBw-I7-XDS" firstAttribute="centerX" secondItem="R6O-kl-D2L" secondAttribute="centerX" id="Bcn-5O-Lwl"/>
+                        <constraint firstItem="NBw-I7-XDS" firstAttribute="top" secondItem="R6O-kl-D2L" secondAttribute="top" constant="18" id="Wgp-OX-Hy2"/>
+                        <constraint firstAttribute="height" constant="55" id="iQK-yG-1dv"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="anP-iu-im0">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="61"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credit Card" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsx-HH-B2G">
+                            <rect key="frame" x="79" y="28" width="162" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="162" id="bIO-MC-izw"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HbW-sd-CGh">
+                            <rect key="frame" x="4" y="21" width="32" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="32" id="JKo-c0-79V"/>
+                                <constraint firstAttribute="height" constant="32" id="jA2-Sd-Pav"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="PayFortSDK.bundle/Arrow.png">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="dsx-HH-B2G" firstAttribute="centerX" secondItem="anP-iu-im0" secondAttribute="centerX" id="92C-jh-nwo"/>
+                        <constraint firstItem="HbW-sd-CGh" firstAttribute="top" secondItem="anP-iu-im0" secondAttribute="top" constant="21" id="D4Y-55-9Yf"/>
+                        <constraint firstAttribute="height" constant="61" id="j33-dV-GFS"/>
+                        <constraint firstItem="HbW-sd-CGh" firstAttribute="left" secondItem="anP-iu-im0" secondAttribute="left" constant="4" id="tTm-8y-hpf"/>
+                        <constraint firstItem="dsx-HH-B2G" firstAttribute="top" secondItem="anP-iu-im0" secondAttribute="top" constant="28" id="xfj-14-Nff"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c8b-nM-9x3">
+                    <rect key="frame" x="0.0" y="117" width="320" height="320"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1kX-Y1-NO6">
+                            <rect key="frame" x="255" y="24.5" width="35" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="35" id="2vh-UM-cAl"/>
+                                <constraint firstAttribute="height" constant="21" id="rAK-oI-7ar"/>
+                            </constraints>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CARD NUMBER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xbp-iB-9fo" customClass="JVFloatLabeledTextField">
+                            <rect key="frame" x="30" y="15" width="220" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="aFh-kk-6Nk"/>
+                            </constraints>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                        </textField>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7xG-K9-joC">
+                            <rect key="frame" x="30" y="55" width="260" height="0.5"/>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="HhH-TG-ucf"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uON-lu-xri" userLabel="CardNumber Erro lbl">
+                            <rect key="frame" x="30" y="55.5" width="260" height="0.0"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                            <color key="textColor" red="0.90665903140000004" green="0.1111016858" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="EXPIRY DATE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cXh-Ff-AKK" customClass="JVFloatLabeledTextField">
+                            <rect key="frame" x="30" y="55.5" width="140" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="NEF-HD-Stp"/>
+                                <constraint firstAttribute="width" constant="140" id="SlN-e9-aLF"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                        </textField>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x3J-f0-7ei">
+                            <rect key="frame" x="30" y="95.5" width="140" height="0.5"/>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="iso-Fp-tV7"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKX-M4-wYm" userLabel="Expiry Erro Lbl">
+                            <rect key="frame" x="30" y="96" width="140" height="0.0"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="0.90665903140000004" green="0.1111016858" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CVV" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4tg-iD-9M7" customClass="JVFloatLabeledTextField">
+                            <rect key="frame" x="184" y="55.5" width="106" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="g5p-xb-k5q"/>
+                            </constraints>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                        </textField>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JrC-Tj-wfP">
+                            <rect key="frame" x="184" y="95.5" width="100" height="0.5"/>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="gqh-pC-voq"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZH-4U-g4i" userLabel="CVC Erro Lbl">
+                            <rect key="frame" x="184" y="96" width="100" height="0.0"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="0.90665903140000004" green="0.1111016858" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CARDHOLDER NAME" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XNQ-aE-hyE" customClass="JVFloatLabeledTextField">
+                            <rect key="frame" x="30" y="96" width="260" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="NmP-sG-fai"/>
+                            </constraints>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                        </textField>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tgb-gk-07U">
+                            <rect key="frame" x="30" y="136" width="260" height="0.5"/>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="hFY-TI-bWe"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0l-0X-Kv1">
+                            <rect key="frame" x="30" y="210" width="260" height="60"/>
+                            <color key="backgroundColor" red="0.21568627450980393" green="0.68627450980392157" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="Je4-2j-dvI"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                            <state key="normal" title="Pay">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DIN-BV-L1D">
+                            <rect key="frame" x="30" y="143" width="260" height="55"/>
+                            <subviews>
+                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAVE THIS CARD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Byn-BT-y5J">
+                                    <rect key="frame" x="8" y="13" width="190" height="28"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="28" id="8Uy-2B-l1p"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wus-Ez-HRg">
+                                    <rect key="frame" x="204" y="11" width="51" height="31"/>
+                                    <color key="onTintColor" red="0.29411764709999999" green="0.58431372550000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </switch>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="wus-Ez-HRg" firstAttribute="top" secondItem="DIN-BV-L1D" secondAttribute="top" constant="11" id="HSC-ib-kNh"/>
+                                <constraint firstAttribute="height" id="IlN-GT-4EX"/>
+                                <constraint firstItem="Byn-BT-y5J" firstAttribute="left" secondItem="DIN-BV-L1D" secondAttribute="left" constant="8" id="PLD-Ev-Iun"/>
+                                <constraint firstAttribute="right" secondItem="wus-Ez-HRg" secondAttribute="right" constant="7" id="a1i-Ev-g0a"/>
+                                <constraint firstItem="wus-Ez-HRg" firstAttribute="left" secondItem="Byn-BT-y5J" secondAttribute="right" constant="6" id="d2o-9W-l4h"/>
+                                <constraint firstItem="Byn-BT-y5J" firstAttribute="top" secondItem="DIN-BV-L1D" secondAttribute="top" constant="13" id="i5Y-WH-GvY"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="x3J-f0-7ei" firstAttribute="top" secondItem="cXh-Ff-AKK" secondAttribute="bottom" id="0Tn-hi-qvp"/>
+                        <constraint firstItem="JrC-Tj-wfP" firstAttribute="bottom" secondItem="mZH-4U-g4i" secondAttribute="top" id="1i5-oD-LqI"/>
+                        <constraint firstItem="uON-lu-xri" firstAttribute="left" secondItem="7xG-K9-joC" secondAttribute="left" id="1k5-Mk-H6H"/>
+                        <constraint firstAttribute="right" secondItem="JrC-Tj-wfP" secondAttribute="right" constant="36" id="2Oa-YT-07Y"/>
+                        <constraint firstItem="1kX-Y1-NO6" firstAttribute="left" secondItem="Xbp-iB-9fo" secondAttribute="right" constant="5" id="34p-7P-Qz0"/>
+                        <constraint firstItem="1kX-Y1-NO6" firstAttribute="centerY" secondItem="Xbp-iB-9fo" secondAttribute="centerY" id="3E6-TY-G47"/>
+                        <constraint firstItem="uON-lu-xri" firstAttribute="top" secondItem="7xG-K9-joC" secondAttribute="bottom" id="3QD-93-K1w"/>
+                        <constraint firstItem="mZH-4U-g4i" firstAttribute="right" secondItem="JrC-Tj-wfP" secondAttribute="right" id="5p5-d0-af3"/>
+                        <constraint firstItem="7xG-K9-joC" firstAttribute="left" secondItem="c8b-nM-9x3" secondAttribute="left" constant="30" id="7Cl-QI-Etk"/>
+                        <constraint firstItem="DIN-BV-L1D" firstAttribute="left" secondItem="c8b-nM-9x3" secondAttribute="left" constant="30" id="C7i-EW-uVK"/>
+                        <constraint firstItem="AKX-M4-wYm" firstAttribute="left" secondItem="x3J-f0-7ei" secondAttribute="left" id="CBr-gH-WCi"/>
+                        <constraint firstItem="JrC-Tj-wfP" firstAttribute="top" secondItem="4tg-iD-9M7" secondAttribute="bottom" id="HYD-qc-Aox"/>
+                        <constraint firstItem="x3J-f0-7ei" firstAttribute="right" secondItem="cXh-Ff-AKK" secondAttribute="right" id="HgV-9R-TpH"/>
+                        <constraint firstItem="DIN-BV-L1D" firstAttribute="top" secondItem="XNQ-aE-hyE" secondAttribute="bottom" constant="7" id="I8S-wj-X30"/>
+                        <constraint firstItem="e0l-0X-Kv1" firstAttribute="left" secondItem="c8b-nM-9x3" secondAttribute="left" constant="30" id="L24-JS-S4Z"/>
+                        <constraint firstAttribute="right" secondItem="1kX-Y1-NO6" secondAttribute="right" constant="30" id="L7R-ex-7Px"/>
+                        <constraint firstAttribute="right" secondItem="Tgb-gk-07U" secondAttribute="right" constant="30" id="LH6-NA-thz"/>
+                        <constraint firstItem="Tgb-gk-07U" firstAttribute="top" secondItem="XNQ-aE-hyE" secondAttribute="bottom" id="MMS-AG-H1F"/>
+                        <constraint firstItem="Tgb-gk-07U" firstAttribute="left" secondItem="c8b-nM-9x3" secondAttribute="left" constant="30" id="MUC-lP-tsX"/>
+                        <constraint firstItem="uON-lu-xri" firstAttribute="bottom" secondItem="4tg-iD-9M7" secondAttribute="top" id="Mv2-Of-EIh"/>
+                        <constraint firstItem="Xbp-iB-9fo" firstAttribute="left" secondItem="c8b-nM-9x3" secondAttribute="left" constant="30" id="QgY-s7-Lag"/>
+                        <constraint firstItem="AKX-M4-wYm" firstAttribute="top" secondItem="x3J-f0-7ei" secondAttribute="bottom" id="Rqx-F2-qGz"/>
+                        <constraint firstAttribute="right" secondItem="DIN-BV-L1D" secondAttribute="right" constant="30" id="TRr-mv-gwP"/>
+                        <constraint firstItem="7xG-K9-joC" firstAttribute="top" secondItem="Xbp-iB-9fo" secondAttribute="bottom" id="TaE-vD-BpI"/>
+                        <constraint firstAttribute="right" secondItem="XNQ-aE-hyE" secondAttribute="right" constant="30" id="UBw-Zc-QlS"/>
+                        <constraint firstItem="XNQ-aE-hyE" firstAttribute="top" secondItem="mZH-4U-g4i" secondAttribute="bottom" id="UqU-bZ-a6Z"/>
+                        <constraint firstItem="uON-lu-xri" firstAttribute="right" secondItem="7xG-K9-joC" secondAttribute="right" id="Wn5-UU-uGQ"/>
+                        <constraint firstItem="AKX-M4-wYm" firstAttribute="right" secondItem="x3J-f0-7ei" secondAttribute="right" id="ZBS-sF-59j"/>
+                        <constraint firstItem="uON-lu-xri" firstAttribute="bottom" secondItem="cXh-Ff-AKK" secondAttribute="top" id="cpD-gv-fla"/>
+                        <constraint firstItem="Xbp-iB-9fo" firstAttribute="top" secondItem="c8b-nM-9x3" secondAttribute="top" constant="15" id="eXI-8h-6w2"/>
+                        <constraint firstItem="e0l-0X-Kv1" firstAttribute="top" secondItem="DIN-BV-L1D" secondAttribute="bottom" constant="12" id="gM5-SC-l5T"/>
+                        <constraint firstAttribute="right" secondItem="7xG-K9-joC" secondAttribute="right" constant="30" id="hLM-4H-O1K"/>
+                        <constraint firstItem="x3J-f0-7ei" firstAttribute="left" secondItem="c8b-nM-9x3" secondAttribute="left" constant="30" id="hRX-h8-ceY"/>
+                        <constraint firstAttribute="height" constant="320" id="jOo-pB-i9z"/>
+                        <constraint firstAttribute="right" secondItem="4tg-iD-9M7" secondAttribute="right" constant="30" id="k9e-En-I6b"/>
+                        <constraint firstItem="XNQ-aE-hyE" firstAttribute="left" secondItem="c8b-nM-9x3" secondAttribute="left" constant="30" id="kf3-dC-TiI"/>
+                        <constraint firstItem="XNQ-aE-hyE" firstAttribute="top" secondItem="AKX-M4-wYm" secondAttribute="bottom" id="nYd-Qz-Lxh"/>
+                        <constraint firstAttribute="right" secondItem="e0l-0X-Kv1" secondAttribute="right" constant="30" id="qiY-eD-3hd"/>
+                        <constraint firstItem="JrC-Tj-wfP" firstAttribute="left" secondItem="4tg-iD-9M7" secondAttribute="left" id="tRo-yp-ZLn"/>
+                        <constraint firstItem="cXh-Ff-AKK" firstAttribute="left" secondItem="c8b-nM-9x3" secondAttribute="left" constant="30" id="tXl-RY-Hjx"/>
+                        <constraint firstItem="mZH-4U-g4i" firstAttribute="left" secondItem="JrC-Tj-wfP" secondAttribute="left" id="vTU-mA-vsz"/>
+                        <constraint firstItem="4tg-iD-9M7" firstAttribute="left" secondItem="cXh-Ff-AKK" secondAttribute="right" constant="14" id="yGo-6k-ckq"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.94901960780000005" green="0.95686274510000002" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="right" secondItem="R6O-kl-D2L" secondAttribute="right" id="8kC-Ot-zXb"/>
+                <constraint firstItem="anP-iu-im0" firstAttribute="top" secondItem="M1L-v1-Ywo" secondAttribute="top" id="ARV-hs-VzG"/>
+                <constraint firstAttribute="right" secondItem="anP-iu-im0" secondAttribute="right" id="VUE-Es-kea"/>
+                <constraint firstAttribute="right" secondItem="c8b-nM-9x3" secondAttribute="right" id="cv5-pL-2E6"/>
+                <constraint firstItem="c8b-nM-9x3" firstAttribute="left" secondItem="M1L-v1-Ywo" secondAttribute="left" id="emB-rq-Jwg"/>
+                <constraint firstItem="c8b-nM-9x3" firstAttribute="top" secondItem="anP-iu-im0" secondAttribute="bottom" constant="56" id="lf7-gR-yYM"/>
+                <constraint firstItem="R6O-kl-D2L" firstAttribute="top" secondItem="anP-iu-im0" secondAttribute="bottom" id="prB-TY-Gqn"/>
+                <constraint firstItem="anP-iu-im0" firstAttribute="left" secondItem="M1L-v1-Ywo" secondAttribute="left" id="saa-ns-rdQ"/>
+                <constraint firstItem="R6O-kl-D2L" firstAttribute="left" secondItem="M1L-v1-Ywo" secondAttribute="left" id="wWN-va-jZN"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+            <connections>
+                <outlet property="BackBtn" destination="HbW-sd-CGh" id="U5x-SB-FmD"/>
+                <outlet property="CVCNumberTxt" destination="4tg-iD-9M7" id="jQ4-cu-cbS"/>
+                <outlet property="CardNameTxt" destination="XNQ-aE-hyE" id="Th6-TI-ccy"/>
+                <outlet property="CardNumberTxt" destination="Xbp-iB-9fo" id="wO0-PN-Cw1"/>
+                <outlet property="ExpDateTxt" destination="cXh-Ff-AKK" id="i5e-eu-vF6"/>
+                <outlet property="PriceLbl" destination="NBw-I7-XDS" id="n19-Dy-9wc"/>
+                <outlet property="SaveCardView" destination="DIN-BV-L1D" id="7t4-jT-OpC"/>
+                <outlet property="cVCNumberErrorlbl" destination="mZH-4U-g4i" id="u7d-CR-uPD"/>
+                <outlet property="cardNumberErrorlbl" destination="uON-lu-xri" id="7dg-Nk-PSJ"/>
+                <outlet property="expDateErrorlbl" destination="AKX-M4-wYm" id="YpU-fb-6Tf"/>
+                <outlet property="imageCard" destination="1kX-Y1-NO6" id="OR6-bo-652"/>
+                <outlet property="paymentBtn" destination="e0l-0X-Kv1" id="PUh-y4-sWs"/>
+                <outlet property="saveCardLbl" destination="Byn-BT-y5J" id="ftt-MH-yPT"/>
+                <outlet property="savedCardSwitch" destination="wus-Ez-HRg" id="hbj-zu-rpH"/>
+                <outlet property="titleLbl" destination="dsx-HH-B2G" id="gRc-sT-YXv"/>
+                <outlet property="titleView" destination="anP-iu-im0" id="azi-4U-ui7"/>
+            </connections>
+            <point key="canvasLocation" x="131" y="127"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="PayFortSDK.bundle/Arrow.png" width="256" height="256"/>
+    </resources>
+</document>

@@ -1,13 +1,10 @@
 
-#import "RNPayfortSdk.h"
+#import <Foundation/Foundation.h>
+#import "React/RCTBridgeModule.h"
+#import "React/RCTConvert.h"
+#import <PayFortSDK/PayFortView.h>
 
-@implementation RNPayfortSdk
+@interface RCT_EXTERN_MODULE(PayFortSDK, NSObject)
 
-- (dispatch_queue_t)methodQueue
-{
-    return dispatch_get_main_queue();
-}
-RCT_EXPORT_MODULE()
-
+RCT_EXTERN_METHOD(Pay:(NSString *)dataDict successCallback:(RCTResponseSenderBlock)successCallback errorCallback:(RCTResponseSenderBlock)errorCallback)
 @end
-  
