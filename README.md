@@ -54,7 +54,8 @@
 1. Download PayFort SDK Module file from [here](https://docs.payfort.com/docs/api/build/lib/PayFortSDK1.9.zip).
 2. Extract PayFortSDK1.9.zip.
 3. Copy extracted directory to ios directory.
-4. Copy path of PayFortSDK.h file from PayFortSDK.framework → Headers and replace Pods → Development Pods → react-native-payfort-sdk → PayFort.h 
+4. open iOS folder in terminal and run command "pod install" .
+5. Copy path of PayFortSDK.h file from PayFortSDK.framework → Headers and replace Pods → Development Pods → react-native-payfort-sdk → PayFort.h 
 ```
 //#import  <PayFortSDK/PayFortSDK.h>
 ```
