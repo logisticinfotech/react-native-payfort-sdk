@@ -1,4 +1,3 @@
+import PayFort from './PayFortSDK/PayFortSDK';
 
-import PayFortSDK from './PayFortSDK/PayFortSDK'
-
-export default PayFortSDK;
+export default PayFort;

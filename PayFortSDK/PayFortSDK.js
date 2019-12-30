@@ -8,7 +8,7 @@
 
 // import payFort from './src/Component/PayFort/PayFort';
 import {NativeModules, Platform} from 'react-native';
-const { RNPayfortSdk } = NativeModules;
+const {PayFort} = NativeModules;
 
 const RNPayFort = async parameter => {
   return new Promise(async (resolve, reject) => {
@@ -23,7 +23,7 @@ const RNPayFort = async parameter => {
       parameter.currencyType &&
       parameter.testing
     ) {
-      await RNPayfortSdk.Pay(
+      await PayFort.Pay(
         JSON.stringify(parameter),
         successResponseData => {
           resolve(

@@ -1,5 +1,5 @@
 <p align="left">
-<a href="https://www.npmjs.com/package/@logisticinfotech/react-native-payfort-sdk"><img alt="npm version" src="https://img.shields.io/badge/npm-v1.0.2-green.svg"></a>
+<a href="https://www.npmjs.com/package/@logisticinfotech/react-native-payfort-sdk"><img alt="npm version" src="https://img.shields.io/badge/npm-v1.0.5-green.svg"></a>
 <a href="https://www.npmjs.com/package/@logisticinfotech/react-native-payfort-sdk"><img src="https://img.shields.io/badge/downloads-%3E1K-yellow.svg"></a>
 <a href="https://www.npmjs.com/package/@logisticinfotech/react-native-payfort-sdk"<><img src="https://img.shields.io/badge/license-MIT-orange.svg"></a>
 </p>
@@ -47,26 +47,36 @@
 1. Download PayFort module file from [here](https://docs.payfort.com/docs/api/build/lib/FORTSDKv1.5.zip).
 2. Extract FORTSDKv1.5.zip.
 3. Open directory of android of your react native project in Android Studio.
-4. Click on File -> New -> New Module -> Select "Import .JAR/.AAR Packages" -> Click on Next -> Select FORTSDKv1.5.aar in File name -> Click on Finish.
+4. Click on File → New → New Module→ Select "Import .JAR/.AAR Packages" → Click on Next → Select FORTSDKv1.5.aar in File name → Click on Finish.
 
 ### iOS :
 
 1. Download PayFort SDK Module file from [here](https://docs.payfort.com/docs/api/build/lib/PayFortSDK1.9.zip).
 2. Extract PayFortSDK1.9.zip.
-3. Drag the PayFortSDK.framework & PayFortSDK.bundle to Frameworks in Project Navigator.
-4. Create a new group Frameworks if it does not exist: * Choose Create groups for any added folders.* Make Sure to select Copy files if needed.
-5. Set -ObjC in the Other Linker Flags in the Target → Build Settings Tab.
-6. For Swift Projects Don’t forget to add the #import to the Bridging-Header.h
+3. Copy extracted directory to ios directory.
+4. Copy path of PayFortSDK.h file from PayFortSDK.framework → Headers and replace Pods → Development Pods → react-native-payfort-sdk → PayFort.h 
+```
+//#import  <PayFortSDK/PayFortSDK.h>
+```
+to
+```
+#import "paste copied path"
+```
+example : 
+```
+#import "/Users/bhavinr/Desktop/PayFortApp/ios/PayFortSDK.framework/Headers/PayFortSDK.h"
+```
+
 
 ## Usage
 
 ```javascript
-import RNPayfortSdk from "@logisticinfotech/react-native-payfort-sdk";
+import Payfort from "@logisticinfotech/react-native-payfort-sdk";
 
 // TODO: What to do with the module?
 
 onPressPay = () => {
-  RNPayfortSdk({
+  Payfort({
     command: "PURCHASE",
     access_code: "xxxxxxxxxxxxxxxxxx",
     merchant_identifier: "xxxxxxxxxx",

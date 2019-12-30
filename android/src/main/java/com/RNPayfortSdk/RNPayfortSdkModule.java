@@ -115,7 +115,7 @@ public class RNPayfortSdkModule extends ReactContextBaseJavaModule implements Ac
   @NonNull
   @Override
   public String getName() {
-    return "RNPayfortSdk";
+    return "PayFort";
   }
 
 
