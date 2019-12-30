@@ -4,7 +4,7 @@
 #import <React/RCTLog.h>
 #include <CommonCrypto/CommonDigest.h>
 
-//#import <PayFortSDK/PayFortSDK.h>
+#import <PayFortSDK/PayFortSDK.h>
 
 @interface PayFort : NSObject <RCTBridgeModule>
 
