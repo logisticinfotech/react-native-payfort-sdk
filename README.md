@@ -1,5 +1,5 @@
 <p align="left">
-<a href="https://www.npmjs.com/package/@logisticinfotech/react-native-payfort-sdk"><img alt="npm version" src="https://img.shields.io/badge/npm-v1.0.5-green.svg"></a>
+<a href="https://www.npmjs.com/package/@logisticinfotech/react-native-payfort-sdk"><img alt="npm version" src="https://img.shields.io/badge/npm-v1.0.7-green.svg"></a>
 <a href="https://www.npmjs.com/package/@logisticinfotech/react-native-payfort-sdk"><img src="https://img.shields.io/badge/downloads-%3E1K-yellow.svg"></a>
 <a href="https://www.npmjs.com/package/@logisticinfotech/react-native-payfort-sdk"<><img src="https://img.shields.io/badge/license-MIT-orange.svg"></a>
 </p>
@@ -55,19 +55,23 @@
 2. Extract PayFortSDK1.9.zip.
 3. Copy extracted directory to ios directory.
 4. open iOS folder in terminal and run command "pod install" .
-5. Copy path of PayFortSDK.h file from PayFortSDK.framework → Headers and replace Pods → Development Pods → react-native-payfort-sdk → PayFort.h 
+5. Copy path of PayFortSDK.h file from PayFortSDK.framework → Headers and replace Pods → Development Pods → react-native-payfort-sdk → PayFort.h
+
 ```
 //#import  <PayFortSDK/PayFortSDK.h>
 ```
+
 to
+
 ```
 #import "paste copied path"
 ```
-example : 
+
+example :
+
 ```
 #import "/Users/bhavinr/Desktop/PayFortApp/ios/PayFortSDK.framework/Headers/PayFortSDK.h"
 ```
-
 
 ## Usage
 
@@ -102,8 +106,8 @@ onPressPay = () => {
 ## Note
 
 1. Before sending the amount value of any transaction, you have to multiply the value with the currency decimal code according to ISO code 3.
-    For example: If the amount value was 500 AED; according to ISO code 3, you should multiply the value with 100 (2 decimal points); so it will be sent in the request as 50000.
-    Another example: If the amount value was 100 JOD; according to ISO code 3, you should multiply the value with 1000 (3 decimal points); so it will be sent in the request as 100000.
+   For example: If the amount value was 500 AED; according to ISO code 3, you should multiply the value with 100 (2 decimal points); so it will be sent in the request as 50000.
+   Another example: If the amount value was 100 JOD; according to ISO code 3, you should multiply the value with 1000 (3 decimal points); so it will be sent in the request as 100000.
 
 2. If you have unique merchent_reference then you can add to parameter, else system will generate unique merchent_reference by its own.
 
@@ -121,7 +125,7 @@ onPressPay = () => {
 | customer_email       | Alphanumeric | ✅        | The customer's email.                                                                                                                                      | 254    | \_ - . @                |                                                                                                                                                         | customer@domain.com |
 | testing              | Boolean      | ✅        | Testing or Production                                                                                                                                      |        |                         | "true" or "false"                                                                                                                                       |                     |
 | sdk_token            | Alphanumeric | ✅        | An SDK token to enable using the FORT Mobile SDK.                                                                                                          | 100    |                         |                                                                                                                                                         | Dwp78q3             |
-| merchant_reference           | Alphanumeric | ❌        | The Merchant’s unique order number.                                                                                                        | 40    | _ - .                 |                                                                                                                                                         | XYZ9239-yu898              |
+| merchant_reference   | Alphanumeric | ❌        | The Merchant’s unique order number.                                                                                                                        | 40     | \_ - .                  |                                                                                                                                                         | XYZ9239-yu898       |
 | token_name           | Alphanumeric | ❌        | The Token received from the Tokenization process.                                                                                                          | 100    | \_ - . @                |                                                                                                                                                         | Op9Vmp              |
 | payment_option       | Alpha        | ❌        | Payment option.                                                                                                                                            | 10     |                         | "MASTERCARD" or "VISA" or "AMEX" or "MADA (for Purchase operations and eci Ecommerce only)" or "MEEZA (for Purchase operations and ECOMMERCE eci only)" |                     |
 | eci                  | Alpha        | ❌        | E-commerce indicator.                                                                                                                                      | 16     |                         | ECOMMERCE                                                                                                                                               |                     |
