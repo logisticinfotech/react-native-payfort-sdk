@@ -101,7 +101,7 @@ public class LIFortPayment extends Activity  {
 
         map.put("access_code", access_code);
         map.put("device_id", deviceId);
-        map.put("language", "en");
+        map.put("language", language);
         map.put("merchant_identifier", merchant_identifier);
         map.put("signature", getSignature());
         map.put("service_command", "SDK_TOKEN");
@@ -215,7 +215,7 @@ public class LIFortPayment extends Activity  {
             text = sha_Request_Phrase
                     + "access_code=" + access_code
                     + "device_id=" + deviceId
-                    + "language=en"
+                    + "language=" + language
                     + "merchant_identifier=" + merchant_identifier
                     + "service_command=SDK_TOKEN"
                     + sha_Request_Phrase;
