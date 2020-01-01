@@ -76,6 +76,7 @@ public class RNPayfortSdkModule extends ReactContextBaseJavaModule implements Ac
               .setMerchantExtra2(requestParameterBean.getMerchantExtra2())
               .setMerchantExtra3(requestParameterBean.getMerchantExtra3())
               .setMerchantExtra4(requestParameterBean.getMerchantExtra4())
+              .setMerchantExtra5(requestParameterBean.getMerchantExtra5())
               .setCallback(new FortInterfaces.OnTnxProcessed() {
                 @Override
                 public void onCancel(Map<String, Object> requestMap, Map<String, Object> responseMap) {

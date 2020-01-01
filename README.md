@@ -51,7 +51,7 @@
 
 ### iOS :
 
-1. Download PayFort SDK Module file from [here](https://docs.payfort.com/docs/api/build/lib/PayFortSDK1.9.zip).
+1. Download PayFort SDK Module file from [here](https://docs.payfort.com/docs/api/build/lib/PayFortSDK2.0.zip).
 2. Extract PayFortSDK1.9.zip.
 3. Copy extracted directory to ios directory.
 4. Copy path of PayFortSDK.h file from PayFortSDK.framework → Headers and replace Pods → Development Pods → react-native-payfort-sdk → PayFort.h `//#import  <PayFortSDK/PayFortSDK.h>` to `#import "paste copied path"`
@@ -177,4 +177,4 @@ You want to test a transaction but you don’t have a credit card or user creden
 | MasterPass     | 4000000000000002 | 05/21       | 123       |
 | Visa Checkout  | 4000000000000002 | 05/21       | 123       |
 
-#### for more details, visit [Payfort Documentation](https://docs.payfort.com/docs/api/build/index.html).
+#### for more details, visit references [Payfort Documentation](https://docs.payfort.com/docs/api/build/index.html) and [Payfort Mobile SDK](https://docs.payfort.com/docs/api/build/index.html#fort-mobile-sdk) .

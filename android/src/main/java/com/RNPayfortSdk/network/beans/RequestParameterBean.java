@@ -46,6 +46,9 @@ public class RequestParameterBean {
     @SerializedName("merchant_extra4")
     @Expose
     private String merchantExtra4;
+    @SerializedName("merchant_extra5")
+    @Expose
+    private String merchantExtra5;
     @SerializedName("access_code")
     @Expose
     private String accessCode;
@@ -183,6 +186,14 @@ public class RequestParameterBean {
 
     public void setMerchantExtra4(String merchantExtra4) {
         this.merchantExtra4 = merchantExtra4;
+    }
+
+    public String getMerchantExtra5() {
+        return merchantExtra5;
+    }
+
+    public void setMerchantExtra5(String merchantExtra5) {
+        this.merchantExtra5 = merchantExtra5;
     }
 
     public String getAccessCode() {
