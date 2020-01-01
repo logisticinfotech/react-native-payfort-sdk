@@ -19,21 +19,21 @@
 #### iOS
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `@logisticinfotech/react-native-payfort-sdk` and add `RNPayfortSdk.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNPayfortSdk.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
+2. Go to `node_modules` ➜ `@logisticinfotech/react-native-payfort-sdk` and add `PayFort.xcodeproj`
+3. In XCode, in the project navigator, select your project. Add `libPayFort.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Run your project (`Cmd+R`)<
 
 #### Android
 
 1. Open up `android/app/src/main/java/[...]/MainActivity.java`
 
-- Add `import com.reactlibrary.RNPayfortSdkPackage;` to the imports at the top of the file
+- Add `import com.RNPayfortSdk.RNPayfortSdkPackage;` to the imports at the top of the file
 - Add `new RNPayfortSdkPackage()` to the list returned by the `getPackages()` method
 
 2. Append the following lines to `android/settings.gradle`:
    ```
    include ':@logisticinfotech/react-native-payfort-sdk'
-   project(':@logisticinfotech/react-native-payfort-sdk').projectDir = new File(rootProject.projectDir, 	'../node_modules/@logisticinfotech/react-native-payfort-sdk/android')
+   project(':@logisticinfotech/react-native-payfort-sdk').projectDir = new File(rootProject.projectDir,     '../node_modules/@logisticinfotech/react-native-payfort-sdk/android')
    ```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
    ```
@@ -51,28 +51,13 @@
 
 ### iOS :
 
-1. Download PayFort SDK Module file from [here](https://docs.payfort.com/docs/api/build/lib/PayFortSDK1.9.zip).
+1. Download PayFort SDK Module file from [here](https://docs.payfort.com/docs/api/build/lib/PayFortSDK2.0.zip).
 2. Extract PayFortSDK1.9.zip.
 3. Copy extracted directory to ios directory.
 4. Add `pod 'JVFloatLabeledTextField'` in the pod file.
 5. open iOS folder in terminal and run command "pod install" .
 6. Copy path of PayFortSDK.h file from PayFortSDK.framework → Headers and replace Pods → Development Pods → react-native-payfort-sdk → PayFort.h
 
-```
-//#import  <PayFortSDK/PayFortSDK.h>
-```
-
-to
-
-```
-#import "paste copied path"
-```
-
-example :
-
-```
-#import "/Users/bhavinr/Desktop/PayFortApp/ios/PayFortSDK.framework/Headers/PayFortSDK.h"
-```
 
 ## Usage
 
@@ -107,10 +92,10 @@ onPressPay = () => {
 ## Note
 
 1. Before sending the amount value of any transaction, you have to multiply the value with the currency decimal code according to ISO code 3.
-   For example: If the amount value was 500 AED; according to ISO code 3, you should multiply the value with 100 (2 decimal points); so it will be sent in the request as 50000.
-   Another example: If the amount value was 100 JOD; according to ISO code 3, you should multiply the value with 1000 (3 decimal points); so it will be sent in the request as 100000.
+    For example: If the amount value was 500 AED; according to ISO code 3, you should multiply the value with 100 (2 decimal points); so it will be sent in the request as 50000.
+    Another example: If the amount value was 100 JOD; according to ISO code 3, you should multiply the value with 1000 (3 decimal points); so it will be sent in the request as 100000.
 
-2. If you have unique merchent_reference then you can add to parameter, else system will generate unique merchent_reference by its own.
+2. If you have unique merchant_reference then you can add to parameter, else system will generate unique merchant_reference by its own.
 
 ## Basic properties
 
@@ -125,8 +110,7 @@ onPressPay = () => {
 | language             | Alpha        | ✅        | The checkout page and messages language.                                                                                                                   | 2      |                         | "en" or "ar"                                                                                                                                            |                     |
 | customer_email       | Alphanumeric | ✅        | The customer's email.                                                                                                                                      | 254    | \_ - . @                |                                                                                                                                                         | customer@domain.com |
 | testing              | Boolean      | ✅        | Testing or Production                                                                                                                                      |        |                         | "true" or "false"                                                                                                                                       |                     |
-| sdk_token            | Alphanumeric | ✅        | An SDK token to enable using the FORT Mobile SDK.                                                                                                          | 100    |                         |                                                                                                                                                         | Dwp78q3             |
-| merchant_reference   | Alphanumeric | ❌        | The Merchant’s unique order number.                                                                                                                        | 40     | \_ - .                  |                                                                                                                                                         | XYZ9239-yu898       |
+| merchant_reference           | Alphanumeric | ❌        | The Merchant’s unique order number.                                                                                                        | 40    | _ - .                 |                                                                                                                                                         | XYZ9239-yu898              |
 | token_name           | Alphanumeric | ❌        | The Token received from the Tokenization process.                                                                                                          | 100    | \_ - . @                |                                                                                                                                                         | Op9Vmp              |
 | payment_option       | Alpha        | ❌        | Payment option.                                                                                                                                            | 10     |                         | "MASTERCARD" or "VISA" or "AMEX" or "MADA (for Purchase operations and eci Ecommerce only)" or "MEEZA (for Purchase operations and ECOMMERCE eci only)" |                     |
 | eci                  | Alpha        | ❌        | E-commerce indicator.                                                                                                                                      | 16     |                         | ECOMMERCE                                                                                                                                               |                     |
@@ -136,7 +120,7 @@ onPressPay = () => {
 | phone_number         | Alphanumeric | ❌        | The customer’s phone number.                                                                                                                               | 19     | + - ( ) Space           |                                                                                                                                                         | 0096279 7219966     |
 | settlement_reference | Alphanumeric | ❌        | The Merchant submits this value to the FORT. The value is then passed to the Acquiring bank and displayed to the merchant in the Acquirer settlement file. | 34     | . - \_                  |                                                                                                                                                         | XYZ9239-yu898       |
 | merchant_extra       | Alphanumeric | ❌        | Extra data sent by merchant. Will be received and sent back as received. Will not be displayed in any report.                                              | 999    | . ; / \_ - , ' @        |                                                                                                                                                         | JohnSmith           |
-| merchant_extra 1     | Alphanumeric | ❌        | Extra data sent by merchant. Will be received and sent back as received. Will not be displayed in any report.                                              | 250    | . ; / \_ - , ' @        |                                                                                                                                                         | JohnSmith           |
+| merchant_extra1     | Alphanumeric | ❌        | Extra data sent by merchant. Will be received and sent back as received. Will not be displayed in any report.                                              | 250    | . ; / \_ - , ' @        |                                                                                                                                                         | JohnSmith           |
 | merchant_extra2      | Alphanumeric | ❌        | Extra data sent by merchant. Will be received and sent back as received. Will not be displayed in any report.                                              | 250    | . ; / \_ - , ' @        |                                                                                                                                                         | JohnSmith           |
 | merchant_extra3      | Alphanumeric | ❌        | Extra data sent by merchant. Will be received and sent back as received. Will not be displayed in any report.                                              | 250    | . ; / \_ - , ' @        |                                                                                                                                                         | JohnSmith           |
 | merchant_extra4      | Alphanumeric | ❌        | Extra data sent by merchant. Will be received and sent back as received. Will not be displayed in any report.                                              | 250    | . ; / \_ - , ' @        |                                                                                                                                                         | JohnSmith           |
@@ -194,4 +178,4 @@ You want to test a transaction but you don’t have a credit card or user creden
 | MasterPass     | 4000000000000002 | 05/21       | 123       |
 | Visa Checkout  | 4000000000000002 | 05/21       | 123       |
 
-#### for more details, visit [Payfort Documentation](https://docs.payfort.com/docs/api/build/index.html).
+#### for more details, visit references [Payfort Documentation](https://docs.payfort.com/docs/api/build/index.html) and [Payfort Mobile SDK](https://docs.payfort.com/docs/api/build/index.html#fort-mobile-sdk) .

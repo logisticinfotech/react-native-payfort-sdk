@@ -50,6 +50,7 @@ public class LIFortPayment extends Activity  {
     private String merchantExtra2;
     private String merchantExtra3;
     private String merchantExtra4;
+    private String merchantExtra5;
     private String command;
     private boolean testing;
     private FortCallBackManager fortCallback;
@@ -85,6 +86,7 @@ public class LIFortPayment extends Activity  {
         this.merchantExtra2=builder.merchantExtra2;
         this.merchantExtra3=builder.merchantExtra3;
         this.merchantExtra4=builder.merchantExtra4;
+        this.merchantExtra5=builder.merchantExtra5;
         this.command=builder.command;
         this.merchent_reference=builder.merchent_reference;
         this.reactApplicationContext=builder.reactApplicationContext;
@@ -99,7 +101,7 @@ public class LIFortPayment extends Activity  {
 
         map.put("access_code", access_code);
         map.put("device_id", deviceId);
-        map.put("language", "en");
+        map.put("language", language);
         map.put("merchant_identifier", merchant_identifier);
         map.put("signature", getSignature());
         map.put("service_command", "SDK_TOKEN");
@@ -185,6 +187,9 @@ public class LIFortPayment extends Activity  {
         if(merchantExtra4!=null){
             requestMap.put("merchant_extra4", merchantExtra4);
         }
+//        if(merchantExtra5!=null){
+//            requestMap.put("merchant_extra5", merchantExtra5);
+//        }
 
         return requestMap;
     }
@@ -210,7 +215,7 @@ public class LIFortPayment extends Activity  {
             text = sha_Request_Phrase
                     + "access_code=" + access_code
                     + "device_id=" + deviceId
-                    + "language=en"
+                    + "language=" + language
                     + "merchant_identifier=" + merchant_identifier
                     + "service_command=SDK_TOKEN"
                     + sha_Request_Phrase;
@@ -288,6 +293,7 @@ public class LIFortPayment extends Activity  {
         private String merchantExtra2;
         private String merchantExtra3;
         private String merchantExtra4;
+        private String merchantExtra5;
         private String command;
         private ReactApplicationContext reactApplicationContext;
 
@@ -422,6 +428,11 @@ public class LIFortPayment extends Activity  {
 
         public LiFortpaymentBuilder setMerchantExtra4(String merchantExtra4) {
             this.merchantExtra4 = merchantExtra4;
+            return this;
+        }
+
+        public LiFortpaymentBuilder setMerchantExtra5(String merchantExtra5) {
+            this.merchantExtra5 = merchantExtra5;
             return this;
         }
 
