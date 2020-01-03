@@ -1,5 +1,5 @@
 <p align="left">
-<a href="https://www.npmjs.com/package/@logisticinfotech/react-native-payfort-sdk"><img alt="npm version" src="https://img.shields.io/badge/npm-v1.0.8-green.svg"></a>
+<a href="https://www.npmjs.com/package/@logisticinfotech/react-native-payfort-sdk"><img alt="npm version" src="https://img.shields.io/badge/npm-v1.0.9-green.svg"></a>
 <a href="https://www.npmjs.com/package/@logisticinfotech/react-native-payfort-sdk"><img src="https://img.shields.io/badge/downloads-%3E1K-yellow.svg"></a>
 <a href="https://www.npmjs.com/package/@logisticinfotech/react-native-payfort-sdk"<><img src="https://img.shields.io/badge/license-MIT-orange.svg"></a>
 </p>
@@ -51,13 +51,13 @@
 
 ### iOS :
 
-1. Download PayFort SDK Module file from [here](https://docs.payfort.com/docs/api/build/lib/PayFortSDK2.0.zip).
-2. Extract PayFortSDK1.9.zip.
-3. Copy extracted directory to ios directory.
-4. Add `pod 'JVFloatLabeledTextField'` in the pod file.
-5. open iOS folder in terminal and run command "pod install" .
-6. Copy path of PayFortSDK.h file from PayFortSDK.framework → Headers and replace Pods → Development Pods → react-native-payfort-sdk → PayFort.h
-
+1. Download PayFort SDK Module file from [here](https://docs.payfort.com/docs/api/build/lib/PayFortSDK1.9.zip).
+2. Extract PayFortSDK1.9.zip and open & copy PayFortSDK.bundle & PayFortSDK.framework to iOS directory of your project.
+3. Replace `#import <PayFortSDK/PayFortView.h>` to `#import "PayFortView.h"` and replace `#import <PayFortSDK/PayFortController.h>` to `#import "PayFortController.h"` in PayFortSDK.framework → Headers → PayFortSDK.h
+4. Copy path of PayFortSDK.h file from PayFortSDK.framework → Headers and add that path in Pods → Development Pods → react-native-payfort-sdk → PayFort.h as shown in screenshot
+![](Screenshot.png)
+5. Add `pod 'JVFloatLabeledTextField'` in the pod file.
+6. open iOS folder in terminal and run command "pod install" .
 
 ## Usage
 

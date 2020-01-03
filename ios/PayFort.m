@@ -6,6 +6,7 @@
 
 NSString *sdk_token;
 NSMutableData *webDataglobal;
+NSString *_merchant_reference;
 
 
 RCT_EXPORT_MODULE()
@@ -16,12 +17,14 @@ RCT_EXPORT_METHOD(Pay:(NSString *)strData successCallback:(RCTResponseSenderBloc
     NSNumber *isLive = [input objectForKey:@"isLive"];
     NSString *access_code = [input objectForKey:@"access_code"];
     NSString *merchant_identifier = [input objectForKey:@"merchant_identifier"];
+    _merchant_reference = [input objectForKey:@"merchant_reference"];
     NSString *language = [input objectForKey:@"language"];
     NSString *shaPhrase = [input objectForKey:@"sha_request_phrase"];
+    NSString *token_name = [input objectForKey:@"token_name"];
     
-    if (merchant_identifier == nil)
+    if (_merchant_reference == nil)
     {
-        merchant_identifier = [NSString stringWithFormat:@"%d",arc4random()];
+        _merchant_reference = [NSString stringWithFormat:@"%d",arc4random()];
     }
         
     
@@ -76,7 +79,6 @@ RCT_EXPORT_METHOD(Pay:(NSString *)strData successCallback:(RCTResponseSenderBloc
             }
             sdk_token = object[@"sdk_token"];
             NSString *command = [input objectForKey:@"command"];
-            NSString *merchant_reference = [input objectForKey:@"merchant_reference"];
             NSString *merchant_extra = [input objectForKey:@"merchant_extra"];
             NSString *merchant_extra1 = [input objectForKey:@"merchant_extra1"];
             NSString *merchant_extra2 = [input objectForKey:@"merchant_extra2"];
@@ -101,8 +103,8 @@ RCT_EXPORT_METHOD(Pay:(NSString *)strData successCallback:(RCTResponseSenderBloc
             NSMutableDictionary *request = [[NSMutableDictionary alloc]init];
             [request setValue:command forKey:@"command"];
             [request setValue:sdk_token forKey:@"sdk_token"];
-            //[request setValue:@"wOUEfsZm" forKey:@"token_name"];
-            [request setValue:merchant_reference forKey:@"merchant_reference"];
+            [request setValue:token_name forKey:@"token_name"];
+            [request setValue:_merchant_reference forKey:@"merchant_reference"];
             [request setValue:merchant_extra forKey:@"merchant_extra"];
             [request setValue:merchant_extra1 forKey:@"merchant_extra1"];
             [request setValue:merchant_extra2 forKey:@"merchant_extra2"];

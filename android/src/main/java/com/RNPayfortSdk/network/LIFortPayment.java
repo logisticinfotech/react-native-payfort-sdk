@@ -34,7 +34,7 @@ public class LIFortPayment extends Activity  {
     private String access_code;
     private String sha_Request_Phrase;
     private String email;
-    private long amount;
+    private Double amount;
     private String currency_type;
     private String paymentOption;
     private String language;
@@ -274,7 +274,7 @@ public class LIFortPayment extends Activity  {
         private String access_code;
         private String sha_Request_Phrase;
         private String email;
-        private long amount;
+        private Double amount;
         private String currency_type;
         private String language;
         private boolean testing;
@@ -327,7 +327,7 @@ public class LIFortPayment extends Activity  {
             return this;
         }
 
-        public LiFortpaymentBuilder setAmount(long amount) {
+        public LiFortpaymentBuilder setAmount(Double amount) {
             this.amount = amount;
             return this;
         }
