@@ -60,7 +60,7 @@ public class RequestParameterBean {
     private String shaRequestPhrase;
     @SerializedName("amount")
     @Expose
-    private Double amount;
+    private long amount;
     @SerializedName("currencyType")
     @Expose
     private String currencyType;
@@ -220,11 +220,11 @@ public class RequestParameterBean {
         this.shaRequestPhrase = shaRequestPhrase;
     }
 
-    public Double getAmount() {
+    public long getAmount() {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(long amount) {
         this.amount = amount;
     }
 
