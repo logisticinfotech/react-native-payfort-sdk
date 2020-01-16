@@ -128,7 +128,7 @@ RCT_EXPORT_METHOD(Pay:(NSString *)strData successCallback:(RCTResponseSenderBloc
                                         Success:^(NSDictionary *requestDic, NSDictionary *responeDic) {
                     NSLog(@"Success");
                     NSLog(@"responeDic=%@",responeDic);
-                    successCallback(@[@"",responeDic, @true]);
+                    successCallback(@[responeDic]);
                 }
                                        Canceled:^(NSDictionary *requestDic, NSDictionary *responeDic) {
                     NSLog(@"Canceled");
@@ -137,7 +137,7 @@ RCT_EXPORT_METHOD(Pay:(NSString *)strData successCallback:(RCTResponseSenderBloc
                                           Faild:^(NSDictionary *requestDic, NSDictionary *responeDic, NSString *message) {
                     NSLog(@"Faild");
                     NSLog(@"responeDic=%@",responeDic);
-                    errorCallback(@[RCTMakeError(@"Faild", nil, nil)]);
+                    errorCallback(@[responeDic]);
                 }];
             });
             
