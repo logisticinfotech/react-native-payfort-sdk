@@ -30,6 +30,7 @@ public class LIFortPayment extends Activity  {
     private static final String TAG = "LIFortPayment";
     public static final int REQUEST_PAYMENT = 2000;
     private String tokenName;
+    private String sdkToken;
     private String merchant_identifier;
     private String access_code;
     private String sha_Request_Phrase;
@@ -75,6 +76,7 @@ public class LIFortPayment extends Activity  {
         this.callback = builder.callback;
         this.paymentOption = builder.paymentOption;
         this.tokenName = builder.tokenName;
+        this.sdkToken = builder.sdkToken;
         this.eci=builder.eci;
         this.orderDescription=builder.orderDescription;
         this.customerIP=builder.customerIP;
@@ -93,15 +95,20 @@ public class LIFortPayment extends Activity  {
         deviceId = FortSdk.getDeviceId(context);
     }
 
-    public void requestPayment() {
-        Log.d("DeviceId ", deviceId);
+    public void continueWithSDKTokenProvided(){
+        FortRequest fortrequest = new FortRequest();
+        fortrequest.setRequestMap(collectRequestMap(sdkToken));
+        fortrequest.setShowResponsePage(true); // to [display/use]
+        callSdk(fortrequest);
+    }
 
+    public void continueWithOutSDKTokenTokenProvided(){
         RestApi restApi = RestApiBuilder.getInstance();
         Map<String, Object> map = new HashMap<>();
 
         map.put("access_code", access_code);
         map.put("device_id", deviceId);
-        map.put("language", language);
+        map.put("language", "en");
         map.put("merchant_identifier", merchant_identifier);
         map.put("signature", getSignature());
         map.put("service_command", "SDK_TOKEN");
@@ -133,6 +140,15 @@ public class LIFortPayment extends Activity  {
                 });
     }
 
+    public void requestPayment() {
+        Log.d("DeviceId ", deviceId);
+        if(sdkToken!=null){
+            continueWithSDKTokenProvided();
+        }
+        else {
+            continueWithOutSDKTokenTokenProvided();
+        }
+    }
 
     private Map<String, Object> collectRequestMap(String sdkToken) {
         Map<String, Object> requestMap = new HashMap<>();
@@ -187,9 +203,9 @@ public class LIFortPayment extends Activity  {
         if(merchantExtra4!=null){
             requestMap.put("merchant_extra4", merchantExtra4);
         }
-//        if(merchantExtra5!=null){
-//            requestMap.put("merchant_extra5", merchantExtra5);
-//        }
+        if(merchantExtra5!=null){
+            requestMap.put("merchant_extra5", merchantExtra5);
+        }
 
         return requestMap;
     }
@@ -215,7 +231,7 @@ public class LIFortPayment extends Activity  {
             text = sha_Request_Phrase
                     + "access_code=" + access_code
                     + "device_id=" + deviceId
-                    + "language=" + language
+                    + "language=en"
                     + "merchant_identifier=" + merchant_identifier
                     + "service_command=SDK_TOKEN"
                     + sha_Request_Phrase;
@@ -269,6 +285,7 @@ public class LIFortPayment extends Activity  {
 
     public static class LiFortpaymentBuilder {
         private String tokenName;
+        private String sdkToken;
         private String merchant_identifier;
         private String merchent_reference;
         private String access_code;
@@ -438,6 +455,10 @@ public class LIFortPayment extends Activity  {
 
         public LiFortpaymentBuilder setTokenName(String tokenName) {
             this.tokenName = tokenName;
+            return this;
+        }
+        public LiFortpaymentBuilder setSDKToken(String sdkToken) {
+            this.sdkToken = sdkToken;
             return this;
         }
     }

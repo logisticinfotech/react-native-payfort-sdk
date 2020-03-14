@@ -60,7 +60,7 @@ public class RequestParameterBean {
     private String shaRequestPhrase;
     @SerializedName("amount")
     @Expose
-    private long amount;
+    private Integer amount;
     @SerializedName("currencyType")
     @Expose
     private String currencyType;
@@ -76,6 +76,9 @@ public class RequestParameterBean {
     @SerializedName("token_name")
     @Expose
     private String tokenName;
+    @SerializedName("sdk_token")
+    @Expose
+    private String sdkToken;
 
     public String getCommand() {
         return command;
@@ -220,11 +223,11 @@ public class RequestParameterBean {
         this.shaRequestPhrase = shaRequestPhrase;
     }
 
-    public long getAmount() {
+    public Integer getAmount() {
         return amount;
     }
 
-    public void setAmount(long amount) {
+    public void setAmount(Integer amount) {
         this.amount = amount;
     }
 
@@ -267,5 +270,14 @@ public class RequestParameterBean {
     public void setTokenName(String  testing) {
         this.tokenName = tokenName;
     }
+
+    public  String getSDKToken(){
+        return  sdkToken;
+    }
+
+    public void setSDKToken(String  sdkToken) {
+        this.sdkToken = sdkToken;
+    }
+
 
 }
