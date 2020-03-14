@@ -10,7 +10,7 @@
 import { NativeModules, Platform, PermissionsAndroid } from "react-native";
 const { PayFort } = NativeModules;
 
-const RNPayFort = async parameter => {
+export const RNPayFort = async parameter => {
   if (Platform.OS === "android") {
     try {
       const granted = await PermissionsAndroid.request(
@@ -90,4 +90,43 @@ const RNPayFort = async parameter => {
   }
 };
 
-export default RNPayFort;
+export const getPayFortDeviceId = async () => {
+  if (Platform.OS === "android") {
+    try {
+      const granted = await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.READ_PHONE_STATE
+      );
+      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+        return new Promise(async (resolve, reject) => {
+          console.log("sdk_token from web");
+          await PayFort.getDeviceId(async successResponseData => {
+            resolve(successResponseData);
+          });
+        });
+      } else {
+        return new Promise(async (resolve, reject) => {
+          reject({
+            response_code: "PermissionRequired",
+            response_message: "Grant permission for Read phone state."
+          });
+        });
+      }
+    } catch (err) {
+      return new Promise(async (resolve, reject) => {
+        reject({
+          response_code: "UnknownError",
+          response_message: err
+        });
+      });
+    }
+  } else {
+    return new Promise(async (resolve, reject) => {
+      console.log("sdk_token from web");
+      await PayFort.getDeviceId(async successResponseData => {
+        resolve(successResponseData);
+      });
+    });
+  }
+};
+
+export default { RNPayFort, getPayFortDeviceId };
