@@ -1,5 +1,5 @@
 <p align="left">
-<a href="https://www.npmjs.com/package/@logisticinfotech/react-native-payfort-sdk"><img alt="npm version" src="https://img.shields.io/badge/npm-v1.0.14-green.svg"></a>
+<a href="https://www.npmjs.com/package/@logisticinfotech/react-native-payfort-sdk"><img alt="npm version" src="https://img.shields.io/badge/npm-v1.0.15-green.svg"></a>
 <a href="https://www.npmjs.com/package/@logisticinfotech/react-native-payfort-sdk"><img src="https://img.shields.io/badge/downloads-%3E1K-yellow.svg"></a>
 <a href="https://www.npmjs.com/package/@logisticinfotech/react-native-payfort-sdk"<><img src="https://img.shields.io/badge/license-MIT-orange.svg"></a>
 </p>
@@ -77,12 +77,12 @@ onPay = async () => {
     currencyType: "SAR",
     language: "en",
     email: "naishadh@logisticinfotech.co.in",
-    testing: true
+    testing: true,
   })
-    .then(response => {
+    .then((response) => {
       console.log(response);
     })
-    .catch(error => {
+    .catch((error) => {
       console.log(error);
     });
 };
@@ -93,20 +93,20 @@ onPay = async () => {
 ```javascript
 import {
   getPayFortDeviceId,
-  RNPayFort
+  RNPayFort,
 } from "@logisticinfotech/react-native-payfort-sdk/PayFortSDK/PayFortSDK";
 
 getDeviceToken = async () => {
-  getPayFortDeviceId().then(async deviceId => {
+  getPayFortDeviceId().then(async (deviceId) => {
     await Axios.post("YOUR_WEB_URL_FOR_SDK_TOKEN_GENERATION", {
-      deviceId: deviceId
+      deviceId: deviceId,
     })
-      .then(response => {
+      .then((response) => {
         this.setState({ sdk_token: response.data.sdk_token }, () => {
           this.onPay();
         });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   });
@@ -123,12 +123,12 @@ onPay = async () => {
     language: "en",
     email: "naishadh@logisticinfotech.co.in",
     testing: true,
-    sdk_token: this.state.sdk_token
+    sdk_token: this.state.sdk_token,
   })
-    .then(response => {
+    .then((response) => {
       console.log(response);
     })
-    .catch(error => {
+    .catch((error) => {
       console.log(error);
     });
 };
