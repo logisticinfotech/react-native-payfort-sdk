@@ -74,6 +74,7 @@ export const RNPayFort = async parameter => {
         await PayFort.Pay(
           JSON.stringify(parameter),
           successResponseData => {
+            console.log('successResponseData',successResponseData)
             resolve(successResponseData);
           },
           errorResponseData => {
@@ -89,6 +90,43 @@ export const RNPayFort = async parameter => {
     });
   }
 };
+
+export const applePayViaPayfort = async (parameter) => { 
+  if (Platform.OS === "ios") {
+
+    console.log('parameter====>test=>', parameter)
+    return new Promise(async (resolve, reject) => {
+      if (
+        parameter.command &&
+        parameter.access_code &&
+        parameter.merchant_identifier &&
+        parameter.sha_request_phrase &&
+        parameter.email &&
+        parameter.language &&
+        parameter.amount &&
+        parameter.currencyType &&
+        parameter.testing
+      ) {
+        await PayFort.PayWithApplePay(
+          JSON.stringify(parameter),
+          successResponseData => {
+            console.log('successResponseData',successResponseData)
+            resolve(successResponseData);
+          },
+          errorResponseData => {
+            reject(errorResponseData);
+          }
+        );
+      } else {
+        reject({
+          response_code: "MissingParameter",
+          response_message: "Please enter all required Parameter."
+        });
+      }
+    });
+  }
+};
+
 
 export const getPayFortDeviceId = async () => {
   if (Platform.OS === "android") {
@@ -129,4 +167,4 @@ export const getPayFortDeviceId = async () => {
   }
 };
 
-export default { RNPayFort, getPayFortDeviceId };
+export default { RNPayFort, getPayFortDeviceId, applePayViaPayfort };
