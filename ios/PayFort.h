@@ -4,6 +4,7 @@
 #import <React/RCTLog.h>
 #include <CommonCrypto/CommonDigest.h>
 
-@interface PayFort : NSObject <RCTBridgeModule>
+#import <PayFortSDK.framework/Versions/A/Headers/PayFortSDK.h>
+@interface PayFort : NSObject <RCTBridgeModule, PKPaymentAuthorizationViewControllerDelegate>
 
 @end
