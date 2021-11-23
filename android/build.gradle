@@ -34,6 +34,7 @@ android {
 repositories {
     mavenCentral()
     google()
+    maven { url 'https://www.jitpack.io' }
 }
 
 dependencies {
@@ -42,7 +43,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:multidex:1.0.3'
     implementation project(path: ':FORTSDKv1.5')
-    implementation 'com.victor:lib:1.0.1'
+    implementation 'com.github.yankai-victor:Loading:master-SNAPSHOT'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.shamanland:fonticon:0.1.8'
     implementation('com.nispok:snackbar:2.11.+') {
